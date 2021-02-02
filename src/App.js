@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Table = ({ name, gender, age }) => {
   return (
     <>
@@ -20,6 +22,7 @@ const Table = ({ name, gender, age }) => {
 };
 
 function App() {
+  const [count, setCount] = useState(620610794);
   const persons = [
     {
       name: "Bob",
@@ -47,10 +50,28 @@ function App() {
 
       {/* Code me please! */}
       <h3 class="title is-3">ID Counter</h3>
-      <p>YOUR ID HERE</p>
-      <button>-</button>
-      <button>reset</button>
-      <button>+</button>
+      <p>{count}</p>
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
+        -
+      </button>
+      <button
+        onClick={() => {
+          setCount(620610794);
+        }}
+      >
+        reset
+      </button>
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        +
+      </button>
     </div>
   );
 }
